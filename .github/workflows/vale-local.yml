@@ -33,7 +33,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         id: get-modified-files
         run: |
-          changed_files=$(gh pr diff --name-only ${{ github.event.pull_request.number }} | grep '\.md$' || true)
+          changed_files=$(gh pr diff --repo ${{ github.repository }} --name-only ${{ github.event.pull_request.number }} | grep '\.md$' || true)
           md_files=$(echo "$changed_files" | jq -R -s 'split("\n")[:-1]' | jq -c .)
           echo "Modified md files: $md_files"
           echo "files=$md_files" >> $GITHUB_OUTPUT
