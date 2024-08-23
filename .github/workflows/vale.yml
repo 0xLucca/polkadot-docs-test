@@ -7,8 +7,8 @@ on:
 
 jobs:
   reuse-vale:
-    permissions:
-      pull-requests: write
+    # permissions:
+    #   pull-requests: write
     uses: 0xlucca/polkadot-mkdocs/.github/workflows/reusable-vale.yml@main
     with:
       repo: ${{ github.repository }}
