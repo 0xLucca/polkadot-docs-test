@@ -6,7 +6,7 @@ on:
     branches: main
 
 jobs:
-  review-docs:
+  review-docs-from-vale:
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
