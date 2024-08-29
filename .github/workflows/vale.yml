@@ -1,7 +1,7 @@
 name: Reuse Vale from Mkdocs repo
 
 on:
-  workflow_dispatch: # Allows manual triggering of the workflowa
+  workflow_dispatch: # Allows manual triggering of the workflow
   pull_request:
     branches: main
 
