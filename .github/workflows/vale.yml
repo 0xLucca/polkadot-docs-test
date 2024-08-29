@@ -9,7 +9,7 @@ jobs:
   reuse-vale:
     permissions:
       pull-requests: write
-    uses: 0xlucca/polkadot-mkdocs/.github/workflows/reusable-vale.yml@main
+    uses: 0xlucca/polkadot-mkdocs/.github/workflows/reusable-vale-V2.yml@main
     with:
       repo: ${{ github.repository }}
       pr_number: ${{ github.event.pull_request.number }}
