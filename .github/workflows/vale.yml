@@ -1,17 +1,17 @@
 name: Reuse Vale from Mkdocs repo
 
 on:
-  workflow_dispatch: # Allows manual triggering of the workflow
-  pull_request:
-    branches: main
+  issue_comment:
+    types: [created]
 
 jobs:
   reuse-vale:
+    if: github.event.issue.pull_request && contains(github.event.comment.body, '/vale-review')
     permissions:
       pull-requests: write
     uses: 0xlucca/polkadot-mkdocs/.github/workflows/reusable-vale.yml@main
     with:
       repo: ${{ github.repository }}
-      pr_number: ${{ github.event.pull_request.number }}
+      pr_number: ${{ github.event.issue.number }}
     secrets:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
